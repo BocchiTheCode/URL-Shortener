@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+   <head>
+      <title>URL Shortener</title>
+      <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link href="/public/style.css" rel="stylesheet" type="text/css">
+   </head>
+
+   <body>
+      <div class="container">
+        <h2>API Project: URL Shortener Microservice</h2>
+        <h3>User Story: </h3>
+        <ol>
+          <li>I can POST a URL and receive a shortened URL.</li>
+          <li>If I pass an invalid URL that doesn't follow the <code>http(s)://www.example.com</code> format, I will be informed.<br>
+          <li>When I visit the shortened URL, it will redirect me to my original link.</li>
+        </ol>
+        
+        <h3>Short URL Creation </h3>
+        <form action="api/shorturl/new" method="POST">
+          <label for="url_input">URL to be shortened</label>
+          <input id="url_input" type="text" name="url" value="https://www.freecodecamp.org">
+          <input type="submit" value="POST URL">
+        </form>
+      </div>
+      <div class="footer">
+        <p>
+          by <a href="https://www.freecodecamp.org">Utkarsh Nag</a>
+        </p>
+      </div>
+   </body>
+
+
+</html>
