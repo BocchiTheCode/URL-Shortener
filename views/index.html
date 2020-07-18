@@ -4,6 +4,7 @@
 
    <head>
       <title>URL Shortener</title>
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
       <link href="/public/style.css" rel="stylesheet" type="text/css">
@@ -12,26 +13,26 @@
    <body>
       <div class="container">
         <h2>API Project: URL Shortener Microservice</h2>
-        <h3>User Story: </h3>
-        <ol>
-          <li>I can POST a URL and receive a shortened URL.</li>
-          <li>If I pass an invalid URL that doesn't follow the <code>http(s)://www.example.com</code> format, I will be informed.<br>
-          <li>When I visit the shortened URL, it will redirect me to my original link.</li>
-        </ol>
+        <div class="user-stories">
+          <h3>How it works</h3>
+          <ol>
+            <li>You can POST a URL and receive a shortened URL.</li>
+            <li>You must pass a valid URL that follows the <code>http(s)://www.example.com</code> format.</li>
+            <li>When you visit the shortened URL, it will redirect you to your original link.</li>
+          </ol>
+        </div>
         
         <h3>Short URL Creation </h3>
-        <form action="api/shorturl/new" method="POST">
-          <label for="url_input">URL to be shortened</label>
+        <form class="form-inline" action="api/shorturl/new" method="POST">
           <input id="url_input" type="text" name="url" value="https://www.freecodecamp.org">
           <input type="submit" value="POST URL">
         </form>
       </div>
       <div class="footer">
         <p>
-          by <a href="https://www.freecodecamp.org">Utkarsh Nag</a>
+          by <a href="https://github.com/utkarshnag">Utkarsh Nag</a>
         </p>
       </div>
    </body>
-
 
 </html>
