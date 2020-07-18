@@ -58,7 +58,8 @@ app.post("/api/shorturl/new", function (req, res) {
   if (urlRegex.test(req.body.url)) {
     URL.findOne({ url: req.body.url }, function (err, matchFound) {
       if (err) res.send(err);
-      if (matchFound) res.send('A shortened URL already exists- https://twilight-headline.glitch.me/' + matchFound._id)
+      if (matchFound)
+          res.send("<div style='margin-top: 50px; text-align: center; font-size: 20px'>A shortened URL already exists- " + '<b>https://twilight-headline.glitch.me/' + matchFound._id+"</b></div>");
       else {
         var rand = makeShortenedURL();
         console.log(req.body.url + ' is valid')
@@ -68,10 +69,13 @@ app.post("/api/shorturl/new", function (req, res) {
         });
         document.save(function(err) {
           if (err) res.send(err);
-          res.send(req.body.url+' has been shortened to: '+ 'https://twilight-headline.glitch.me/' + rand);
+          res.send("<div style='margin-top: 50px; text-align: center; font-size: 20px'><b>"+req.body.url+'</b> has been shortened to- '+ '<b>https://twilight-headline.glitch.me/' + rand+"</b></div>");
         });
       }
     });
+  }
+  else {
+    res.send('Invalid URL. Please try again after verifying the link.');
   }
 });
 
